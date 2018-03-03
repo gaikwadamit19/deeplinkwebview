@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28329216204911B000960E66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28329215204911B000960E66 /* AppDelegate.swift */; };
+		28329218204911B000960E66 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28329217204911B000960E66 /* WebViewController.swift */; };
+		2832921B204911B000960E66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28329219204911B000960E66 /* Main.storyboard */; };
+		2832921D204911B000960E66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2832921C204911B000960E66 /* Assets.xcassets */; };
+		2832922820491AAA00960E66 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832922720491AAA00960E66 /* Constant.swift */; };
+		283292302049332600960E66 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832922F2049332600960E66 /* NotificationService.swift */; };
+		283292342049332600960E66 /* WebViewerNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2832922D2049332600960E66 /* WebViewerNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2832923C204971D700960E66 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2832923B204971D700960E66 /* Launch Screen.storyboard */; };
+		285CBC4E204A79AD0061DB82 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CBC4D204A79AD0061DB82 /* Helper.swift */; };
+		38B0BBB81F08CB2E5AAD40FF /* libPods-WebViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */; };
+		FE322ACBAFF339A45599F4A7 /* libPods-WebViewerNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		283292322049332600960E66 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2832920A204911B000960E66 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2832922C2049332600960E66;
+			remoteInfo = WebViewerNotification;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		283292382049332600960E66 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				283292342049332600960E66 /* WebViewerNotification.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0F58BC5438E285E8F03EBFFF /* Pods-WebViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewer/Pods-WebViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		28329212204911B000960E66 /* WebViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28329215204911B000960E66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		28329217204911B000960E66 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2832921A204911B000960E66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2832921C204911B000960E66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		28329221204911B000960E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2832922720491AAA00960E66 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		2832922D2049332600960E66 /* WebViewerNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WebViewerNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2832922F2049332600960E66 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		283292312049332600960E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2832923B204971D700960E66 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		285CBC4B204A69FF0061DB82 /* WebViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewer.entitlements; sourceTree = "<group>"; };
+		285CBC4C204A6CC00061DB82 /* WebViewerNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewerNotification.entitlements; sourceTree = "<group>"; };
+		285CBC4D204A79AD0061DB82 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45558FE9E30512CBD29CB1AF /* Pods-WebViewerNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewerNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewerNotification/Pods-WebViewerNotification.debug.xcconfig"; sourceTree = "<group>"; };
+		89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewerNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B846199B13C0F9456C35160 /* Pods-WebViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewer/Pods-WebViewer.release.xcconfig"; sourceTree = "<group>"; };
+		F63D591134FEFF228D272E54 /* Pods-WebViewerNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewerNotification.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewerNotification/Pods-WebViewerNotification.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2832920F204911B000960E66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38B0BBB81F08CB2E5AAD40FF /* libPods-WebViewer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2832922A2049332600960E66 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE322ACBAFF339A45599F4A7 /* libPods-WebViewerNotification.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28329209204911B000960E66 = {
+			isa = PBXGroup;
+			children = (
+				28329214204911B000960E66 /* WebViewer */,
+				2832922E2049332600960E66 /* WebViewerNotification */,
+				28329213204911B000960E66 /* Products */,
+				6E69468CCB8F6BC4BA6290B9 /* Pods */,
+				C99F140C67FC31EEE452723E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		28329213204911B000960E66 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28329212204911B000960E66 /* WebViewer.app */,
+				2832922D2049332600960E66 /* WebViewerNotification.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28329214204911B000960E66 /* WebViewer */ = {
+			isa = PBXGroup;
+			children = (
+				285CBC4B204A69FF0061DB82 /* WebViewer.entitlements */,
+				2832922720491AAA00960E66 /* Constant.swift */,
+				285CBC4D204A79AD0061DB82 /* Helper.swift */,
+				28329215204911B000960E66 /* AppDelegate.swift */,
+				28329217204911B000960E66 /* WebViewController.swift */,
+				28329219204911B000960E66 /* Main.storyboard */,
+				2832921C204911B000960E66 /* Assets.xcassets */,
+				2832923B204971D700960E66 /* Launch Screen.storyboard */,
+				28329221204911B000960E66 /* Info.plist */,
+			);
+			path = WebViewer;
+			sourceTree = "<group>";
+		};
+		2832922E2049332600960E66 /* WebViewerNotification */ = {
+			isa = PBXGroup;
+			children = (
+				285CBC4C204A6CC00061DB82 /* WebViewerNotification.entitlements */,
+				2832922F2049332600960E66 /* NotificationService.swift */,
+				283292312049332600960E66 /* Info.plist */,
+			);
+			path = WebViewerNotification;
+			sourceTree = "<group>";
+		};
+		6E69468CCB8F6BC4BA6290B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F58BC5438E285E8F03EBFFF /* Pods-WebViewer.debug.xcconfig */,
+				9B846199B13C0F9456C35160 /* Pods-WebViewer.release.xcconfig */,
+				45558FE9E30512CBD29CB1AF /* Pods-WebViewerNotification.debug.xcconfig */,
+				F63D591134FEFF228D272E54 /* Pods-WebViewerNotification.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C99F140C67FC31EEE452723E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */,
+				89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28329211204911B000960E66 /* WebViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28329224204911B000960E66 /* Build configuration list for PBXNativeTarget "WebViewer" */;
+			buildPhases = (
+				FDC0552A8A9876D4944B09E9 /* [CP] Check Pods Manifest.lock */,
+				2832920E204911B000960E66 /* Sources */,
+				2832920F204911B000960E66 /* Frameworks */,
+				28329210204911B000960E66 /* Resources */,
+				283292382049332600960E66 /* Embed App Extensions */,
+				690F5A3E3D871AD40F3A6816 /* [CP] Embed Pods Frameworks */,
+				4F41098A4B42C10B7DFA8E6A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				283292332049332600960E66 /* PBXTargetDependency */,
+			);
+			name = WebViewer;
+			productName = WebViewer;
+			productReference = 28329212204911B000960E66 /* WebViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2832922C2049332600960E66 /* WebViewerNotification */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 283292352049332600960E66 /* Build configuration list for PBXNativeTarget "WebViewerNotification" */;
+			buildPhases = (
+				69E9CA2DF03C4069FFFEDB0F /* [CP] Check Pods Manifest.lock */,
+				283292292049332600960E66 /* Sources */,
+				2832922A2049332600960E66 /* Frameworks */,
+				2832922B2049332600960E66 /* Resources */,
+				E6F814462F655F4FED54AA3C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebViewerNotification;
+			productName = WebViewerNotification;
+			productReference = 2832922D2049332600960E66 /* WebViewerNotification.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2832920A204911B000960E66 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Amit Gaikwad";
+				TargetAttributes = {
+					28329211204911B000960E66 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					2832922C2049332600960E66 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 2832920D204911B000960E66 /* Build configuration list for PBXProject "WebViewer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 28329209204911B000960E66;
+			productRefGroup = 28329213204911B000960E66 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28329211204911B000960E66 /* WebViewer */,
+				2832922C2049332600960E66 /* WebViewerNotification */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28329210204911B000960E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2832921D204911B000960E66 /* Assets.xcassets in Resources */,
+				2832923C204971D700960E66 /* Launch Screen.storyboard in Resources */,
+				2832921B204911B000960E66 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2832922B2049332600960E66 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F41098A4B42C10B7DFA8E6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebViewer/Pods-WebViewer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		690F5A3E3D871AD40F3A6816 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebViewer/Pods-WebViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69E9CA2DF03C4069FFFEDB0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebViewerNotification-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6F814462F655F4FED54AA3C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebViewerNotification/Pods-WebViewerNotification-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FDC0552A8A9876D4944B09E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2832920E204911B000960E66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28329218204911B000960E66 /* WebViewController.swift in Sources */,
+				28329216204911B000960E66 /* AppDelegate.swift in Sources */,
+				2832922820491AAA00960E66 /* Constant.swift in Sources */,
+				285CBC4E204A79AD0061DB82 /* Helper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		283292292049332600960E66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				283292302049332600960E66 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		283292332049332600960E66 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2832922C2049332600960E66 /* WebViewerNotification */;
+			targetProxy = 283292322049332600960E66 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		28329219204911B000960E66 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2832921A204911B000960E66 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		28329222204911B000960E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		28329223204911B000960E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28329225204911B000960E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F58BC5438E285E8F03EBFFF /* Pods-WebViewer.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebViewer/WebViewer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWUDRQ87FB;
+				INFOPLIST_FILE = WebViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeet.DigitalGorkha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		28329226204911B000960E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B846199B13C0F9456C35160 /* Pods-WebViewer.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WebViewer/WebViewer.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWUDRQ87FB;
+				INFOPLIST_FILE = WebViewer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeet.DigitalGorkha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		283292362049332600960E66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45558FE9E30512CBD29CB1AF /* Pods-WebViewerNotification.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWUDRQ87FB;
+				INFOPLIST_FILE = WebViewerNotification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeet.DigitalGorkha.WebViewerNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		283292372049332600960E66 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63D591134FEFF228D272E54 /* Pods-WebViewerNotification.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWUDRQ87FB;
+				INFOPLIST_FILE = WebViewerNotification/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jeet.DigitalGorkha.WebViewerNotification;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2832920D204911B000960E66 /* Build configuration list for PBXProject "WebViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28329222204911B000960E66 /* Debug */,
+				28329223204911B000960E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28329224204911B000960E66 /* Build configuration list for PBXNativeTarget "WebViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28329225204911B000960E66 /* Debug */,
+				28329226204911B000960E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		283292352049332600960E66 /* Build configuration list for PBXNativeTarget "WebViewerNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				283292362049332600960E66 /* Debug */,
+				283292372049332600960E66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2832920A204911B000960E66 /* Project object */;
+}
