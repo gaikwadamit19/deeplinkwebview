@@ -16,6 +16,9 @@
 		283292342049332600960E66 /* WebViewerNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2832922D2049332600960E66 /* WebViewerNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		285CBC4E204A79AD0061DB82 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CBC4D204A79AD0061DB82 /* Helper.swift */; };
 		285CBC50204A978F0061DB82 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285CBC4F204A978F0061DB82 /* Launch Screen.storyboard */; };
+		28C081CA204AACBF00CF3DE7 /* DeeplinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C081C9204AACBF00CF3DE7 /* DeeplinkParser.swift */; };
+		28C081CE204AAE8400CF3DE7 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C081CD204AAE8400CF3DE7 /* DeepLinkManager.swift */; };
+		28C081D0204AAF4E00CF3DE7 /* DeeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C081CF204AAF4E00CF3DE7 /* DeeplinkNavigator.swift */; };
 		38B0BBB81F08CB2E5AAD40FF /* libPods-WebViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */; };
 		FE322ACBAFF339A45599F4A7 /* libPods-WebViewerNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,9 @@
 		285CBC4C204A6CC00061DB82 /* WebViewerNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewerNotification.entitlements; sourceTree = "<group>"; };
 		285CBC4D204A79AD0061DB82 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		285CBC4F204A978F0061DB82 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		28C081C9204AACBF00CF3DE7 /* DeeplinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkParser.swift; sourceTree = "<group>"; };
+		28C081CD204AAE8400CF3DE7 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
+		28C081CF204AAF4E00CF3DE7 /* DeeplinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkNavigator.swift; sourceTree = "<group>"; };
 		3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45558FE9E30512CBD29CB1AF /* Pods-WebViewerNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewerNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewerNotification/Pods-WebViewerNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewerNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +125,7 @@
 				285CBC4F204A978F0061DB82 /* Launch Screen.storyboard */,
 				2832921C204911B000960E66 /* Assets.xcassets */,
 				28329221204911B000960E66 /* Info.plist */,
+				28C081D1204AB23300CF3DE7 /* Deeplink */,
 			);
 			path = WebViewer;
 			sourceTree = "<group>";
@@ -131,6 +138,16 @@
 				283292312049332600960E66 /* Info.plist */,
 			);
 			path = WebViewerNotification;
+			sourceTree = "<group>";
+		};
+		28C081D1204AB23300CF3DE7 /* Deeplink */ = {
+			isa = PBXGroup;
+			children = (
+				28C081C9204AACBF00CF3DE7 /* DeeplinkParser.swift */,
+				28C081CD204AAE8400CF3DE7 /* DeepLinkManager.swift */,
+				28C081CF204AAF4E00CF3DE7 /* DeeplinkNavigator.swift */,
+			);
+			path = Deeplink;
 			sourceTree = "<group>";
 		};
 		6E69468CCB8F6BC4BA6290B9 /* Pods */ = {
@@ -212,10 +229,13 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 0;
 							};
 						};
 					};
@@ -359,8 +379,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				28329218204911B000960E66 /* WebViewController.swift in Sources */,
+				28C081D0204AAF4E00CF3DE7 /* DeeplinkNavigator.swift in Sources */,
 				28329216204911B000960E66 /* AppDelegate.swift in Sources */,
+				28C081CA204AACBF00CF3DE7 /* DeeplinkParser.swift in Sources */,
 				2832922820491AAA00960E66 /* Constant.swift in Sources */,
+				28C081CE204AAE8400CF3DE7 /* DeepLinkManager.swift in Sources */,
 				285CBC4E204A79AD0061DB82 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

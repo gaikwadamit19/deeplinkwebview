@@ -207,10 +207,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        // handle any deeplink
+        Deeplinker.checkDeepLink()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // MARK: Deeplinks
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return Deeplinker.handleDeeplink(url: url)
+    }
+    
+    // MARK: Universal Links
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+            if let url = userActivity.webpageURL {
+                return Deeplinker.handleDeeplink(url: url)
+            }
+        }
+        return false
     }
 }
 
