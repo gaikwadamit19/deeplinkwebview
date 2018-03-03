@@ -18,8 +18,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.activityIndocator?.isHidden = isSpinnerDisabled
-        
+        self.activityIndocator?.isHidden = isSpinnerDisabled        
         webView?.scrollView.bounces = false
         print("\(String(describing: receivedURL))")
         if let url = receivedURL ?? URL(string: kWebUrl) {

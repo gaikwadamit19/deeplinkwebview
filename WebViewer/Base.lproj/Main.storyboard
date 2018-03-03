@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Web View Controller-->
+        <!--Details-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="WebViewControllerID" id="BYZ-38-t0r" customClass="WebViewController" customModule="WebViewer" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3Wr-j8-zJ5"/>
+                    <navigationItem key="navigationItem" title="Details" id="3Wr-j8-zJ5"/>
                     <connections>
                         <outlet property="activityIndocator" destination="aNo-FC-Chw" id="OFM-Yq-TCd"/>
                         <outlet property="webView" destination="EmE-l7-FQE" id="aKL-sQ-XTd"/>
