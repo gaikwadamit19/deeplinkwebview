@@ -14,8 +14,8 @@
 		2832922820491AAA00960E66 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832922720491AAA00960E66 /* Constant.swift */; };
 		283292302049332600960E66 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2832922F2049332600960E66 /* NotificationService.swift */; };
 		283292342049332600960E66 /* WebViewerNotification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2832922D2049332600960E66 /* WebViewerNotification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2832923C204971D700960E66 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2832923B204971D700960E66 /* Launch Screen.storyboard */; };
 		285CBC4E204A79AD0061DB82 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 285CBC4D204A79AD0061DB82 /* Helper.swift */; };
+		285CBC50204A978F0061DB82 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 285CBC4F204A978F0061DB82 /* Launch Screen.storyboard */; };
 		38B0BBB81F08CB2E5AAD40FF /* libPods-WebViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */; };
 		FE322ACBAFF339A45599F4A7 /* libPods-WebViewerNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */; };
 /* End PBXBuildFile section */
@@ -56,10 +56,10 @@
 		2832922D2049332600960E66 /* WebViewerNotification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WebViewerNotification.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2832922F2049332600960E66 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		283292312049332600960E66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2832923B204971D700960E66 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		285CBC4B204A69FF0061DB82 /* WebViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewer.entitlements; sourceTree = "<group>"; };
 		285CBC4C204A6CC00061DB82 /* WebViewerNotification.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewerNotification.entitlements; sourceTree = "<group>"; };
 		285CBC4D204A79AD0061DB82 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		285CBC4F204A978F0061DB82 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45558FE9E30512CBD29CB1AF /* Pods-WebViewerNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewerNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewerNotification/Pods-WebViewerNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewerNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,8 +116,8 @@
 				28329215204911B000960E66 /* AppDelegate.swift */,
 				28329217204911B000960E66 /* WebViewController.swift */,
 				28329219204911B000960E66 /* Main.storyboard */,
+				285CBC4F204A978F0061DB82 /* Launch Screen.storyboard */,
 				2832921C204911B000960E66 /* Assets.xcassets */,
-				2832923B204971D700960E66 /* Launch Screen.storyboard */,
 				28329221204911B000960E66 /* Info.plist */,
 			);
 			path = WebViewer;
@@ -254,8 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				285CBC50204A978F0061DB82 /* Launch Screen.storyboard in Resources */,
 				2832921D204911B000960E66 /* Assets.xcassets in Resources */,
-				2832923C204971D700960E66 /* Launch Screen.storyboard in Resources */,
 				2832921B204911B000960E66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
