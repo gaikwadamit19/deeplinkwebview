@@ -55,9 +55,11 @@ class WebViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    private func updateUI() {
-//        if self.navigationController?.navigationBar
-//    }
+    func reloadWevView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.webView?.reload()
+        }
+    }
 }
 
 extension WebViewController: UIWebViewDelegate {
@@ -98,6 +100,7 @@ extension WebViewController {
             })
         case .wifi, .wwan:
             if let url = receivedURL ?? URL(string: kWebUrl) {
+                self.activityIndocator?.isHidden = false
                 self.activityIndocator?.startAnimating()
                 DispatchQueue.main.async { [weak self] in
                     self?.webView?.loadRequest(NSURLRequest(url: url as URL) as URLRequest)
