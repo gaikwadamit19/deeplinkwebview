@@ -11,6 +11,9 @@ import UIKit
 //App color theme
 let kAppThemeColor: UIColor = UIColor(red: (35/255), green: (171/255), blue: (146/255), alpha: 1)
 
+//Status bar show/hide
+let isStatusBarDisabled: Bool = false
+
 //Navigation bar show/hide
 let isNavigationBarDisabled: Bool = false
 

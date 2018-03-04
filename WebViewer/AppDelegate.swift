@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        UINavigationBar.appearance().isHidden = isNavigationBarDisabled
+        UINavigationBar.appearance().isHidden = isNavigationBarDisabled        
         UINavigationBar.appearance().barTintColor = kAppThemeColor
-        UINavigationBar.appearance().tintColor = kAppThemeColor
+        UINavigationBar.appearance().tintColor = kAppThemeColor                
         
         //Notification using One Signal
         let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in

@@ -30,7 +30,6 @@ class WebViewController: UIViewController {
         webView?.scrollView.bounces = false
         print("\(String(describing: receivedURL))")
         
-        //if Network.reachability?.isReachable == true {
             if let url = receivedURL ?? URL(string: kWebUrl) {
                 self.activityIndocator?.startAnimating()
                 DispatchQueue.main.async { [weak self] in
@@ -39,17 +38,15 @@ class WebViewController: UIViewController {
                     self?.webView?.loadRequest(NSURLRequest(url: url as URL) as URLRequest)
                 }
             }
-//        } else {
-//            DispatchQueue.main.async { [weak self] in
-//                self?.connectionStatusLabel?.text = "Connected"
-//                self?.connectionStatusLabelHeightConstraint?.constant = self?.connectionStatusLabelNoHeight
-//            }
-//        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
 //        updateUserInterface()
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return  isStatusBarDisabled
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
