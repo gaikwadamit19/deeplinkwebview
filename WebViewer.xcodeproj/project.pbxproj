@@ -19,6 +19,7 @@
 		28C081CA204AACBF00CF3DE7 /* DeeplinkParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C081C9204AACBF00CF3DE7 /* DeeplinkParser.swift */; };
 		28C081CE204AAE8400CF3DE7 /* DeepLinkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C081CD204AAE8400CF3DE7 /* DeepLinkManager.swift */; };
 		28C081D0204AAF4E00CF3DE7 /* DeeplinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C081CF204AAF4E00CF3DE7 /* DeeplinkNavigator.swift */; };
+		28EFA49E204BE985005A3023 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EFA49D204BE985005A3023 /* Reachability.swift */; };
 		38B0BBB81F08CB2E5AAD40FF /* libPods-WebViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */; };
 		FE322ACBAFF339A45599F4A7 /* libPods-WebViewerNotification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		28C081C9204AACBF00CF3DE7 /* DeeplinkParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkParser.swift; sourceTree = "<group>"; };
 		28C081CD204AAE8400CF3DE7 /* DeepLinkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkManager.swift; sourceTree = "<group>"; };
 		28C081CF204AAF4E00CF3DE7 /* DeeplinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkNavigator.swift; sourceTree = "<group>"; };
+		28EFA49D204BE985005A3023 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		3840FC3B9BE96294E7607F7A /* libPods-WebViewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45558FE9E30512CBD29CB1AF /* Pods-WebViewerNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewerNotification.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewerNotification/Pods-WebViewerNotification.debug.xcconfig"; sourceTree = "<group>"; };
 		89EB9615CA3D22CF234B5D57 /* libPods-WebViewerNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WebViewerNotification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				285CBC4B204A69FF0061DB82 /* WebViewer.entitlements */,
+				28EFA49D204BE985005A3023 /* Reachability.swift */,
 				2832922720491AAA00960E66 /* Constant.swift */,
 				285CBC4D204A79AD0061DB82 /* Helper.swift */,
 				28329215204911B000960E66 /* AppDelegate.swift */,
@@ -384,6 +387,7 @@
 				28C081CA204AACBF00CF3DE7 /* DeeplinkParser.swift in Sources */,
 				2832922820491AAA00960E66 /* Constant.swift in Sources */,
 				28C081CE204AAE8400CF3DE7 /* DeepLinkManager.swift in Sources */,
+				28EFA49E204BE985005A3023 /* Reachability.swift in Sources */,
 				285CBC4E204A79AD0061DB82 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,6 +539,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWUDRQ87FB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WebViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -556,6 +564,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SWUDRQ87FB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = WebViewer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

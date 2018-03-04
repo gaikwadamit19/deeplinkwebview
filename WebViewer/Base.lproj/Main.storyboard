@@ -19,44 +19,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="EmE-l7-FQE">
-                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="363"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="416" id="zbR-np-XeF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="363" id="yaN-rI-9ED"/>
                                 </constraints>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="0nf-Nd-9js"/>
                                 </connections>
                             </webView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-FC-Chw">
-                                <rect key="frame" x="149.5" y="261.5" width="20" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-Fd-eJV">
+                                <rect key="frame" x="0.0" y="435" width="320" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="20" id="4Gm-Ew-coJ"/>
-                                    <constraint firstAttribute="height" constant="20" id="tcR-xO-glk"/>
+                                    <constraint firstAttribute="height" constant="45" id="XbR-hn-85g"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.13725490200000001" green="0.69411764710000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-FC-Chw">
+                                <rect key="frame" x="142" y="262" width="37" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="acq-nh-r6K"/>
+                                    <constraint firstAttribute="width" constant="37" id="esm-7d-YoN"/>
+                                </constraints>
+                                <color key="color" red="0.13725490200000001" green="0.69411764710000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EmE-l7-FQE" secondAttribute="trailing" id="1Iy-6h-Bk8"/>
-                            <constraint firstItem="EmE-l7-FQE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AWK-VG-lRc"/>
-                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerY" secondItem="EmE-l7-FQE" secondAttribute="centerY" id="QOh-rb-7dH"/>
-                            <constraint firstItem="EmE-l7-FQE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XlJ-ZJ-mNE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="EmE-l7-FQE" secondAttribute="bottom" id="rWd-SQ-hBt"/>
-                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerX" secondItem="EmE-l7-FQE" secondAttribute="centerX" id="tu0-Oh-N8P"/>
+                            <constraint firstItem="EmE-l7-FQE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Do5-jF-wyt"/>
+                            <constraint firstItem="EmE-l7-FQE" firstAttribute="leading" secondItem="wBo-Fd-eJV" secondAttribute="leading" id="Gd7-wb-OKG"/>
+                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="top" secondItem="EmE-l7-FQE" secondAttribute="bottom" constant="8" symbolic="YES" id="H6E-dR-bIN"/>
+                            <constraint firstItem="EmE-l7-FQE" firstAttribute="trailing" secondItem="wBo-Fd-eJV" secondAttribute="trailing" id="Mpz-w6-Wjh"/>
+                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bKa-Pk-3hQ"/>
+                            <constraint firstAttribute="trailing" secondItem="EmE-l7-FQE" secondAttribute="trailing" id="cdr-nQ-Sac"/>
+                            <constraint firstItem="EmE-l7-FQE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mQ7-yk-eXH"/>
+                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oTW-jy-SLZ"/>
+                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yXZ-hd-uUj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="3Wr-j8-zJ5"/>
                     <connections>
                         <outlet property="activityIndocator" destination="aNo-FC-Chw" id="OFM-Yq-TCd"/>
+                        <outlet property="connectionStatusLabel" destination="wBo-Fd-eJV" id="SPT-Hx-Siw"/>
+                        <outlet property="connectionStatusLabelHeightConstraint" destination="XbR-hn-85g" id="oQ6-mX-yRU"/>
                         <outlet property="webView" destination="EmE-l7-FQE" id="aKL-sQ-XTd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+            <point key="canvasLocation" x="474.375" y="132.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sby-FK-CTw">

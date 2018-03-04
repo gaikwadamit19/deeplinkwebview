@@ -23,12 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         
         //Notification using One Signal
         let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
-            
             print("Received Notification: \(notification!.payload.notificationID)")
             print("launchURL = \(notification?.payload.launchURL ?? "None")")
             print("content_available = \(notification?.payload.contentAvailable ?? false)")
-            
-            
         }
         
         let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
@@ -93,6 +90,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         
         //Register for push notification
         onRegisterForPushNotificationsButton()
+        
+        do {
+            Network.reachability = try Reachability(hostname: kWebUrl)
+            do {
+                try Network.reachability?.start()
+            } catch let error as Network.Error {
+                print(error)
+            } catch {
+                print(error)
+            }
+        } catch {
+            print(error)
+        }
         
         return true
     }
