@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 class WebViewController: UIViewController {
 
@@ -15,7 +16,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var connectionStatusLabel: UILabel?
     @IBOutlet weak var connectionStatusLabelHeightConstraint: NSLayoutConstraint?
     
-    let connectingMsg = "Searching For internet Connection..."
+    let connectingMsg = "Connection..."
     let connectedMsg = "Connected"
     
     let connectionStatusLabelDefaultHeight: CGFloat = 45.0
@@ -26,8 +27,12 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.activityIndocator?.isHidden = isSpinnerDisabled        
+        self.activityIndocator?.isHidden = isSpinnerDisabled
+        
         webView?.scrollView.bounces = false
+        webView?.scalesPageToFit = !isWebViewZoomDisabled
+        webView?.isMultipleTouchEnabled = !isWebViewZoomDisabled
+        
         print("\(String(describing: receivedURL))")
         
             if let url = receivedURL ?? URL(string: kWebUrl) {
@@ -45,6 +50,10 @@ class WebViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return  isStatusBarDisabled
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,6 +88,31 @@ extension WebViewController: UIWebViewDelegate {
 //            self?.present(alertController, animated: true, completion: nil)
 //        }
     }
+    
+//    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+//        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+//        if let url = request.url {
+//            if url.absoluteString.range(of: "?app=1") != nil {
+//                // everything is fine.
+//                return true
+//            }
+//            else {
+//                
+//                if let request = request as? NSMutableURLRequest {
+//                    webView.stopLoading()
+//                    request.addValue(status.subscriptionStatus.pushToken, forHTTPHeaderField: "osId")
+//                    webView.loadRequest(request as URLRequest)
+//                }
+//                return false
+//            }
+//        }
+//
+//        return true
+//    }
+//    
+//    func webViewDidStartLoad(_ webView: UIWebView) {
+//        
+//    }
 }
 
 //Rechabiliy

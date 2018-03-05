@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         
         UINavigationBar.appearance().isHidden = isNavigationBarDisabled        
         UINavigationBar.appearance().barTintColor = kAppThemeColor
-        UINavigationBar.appearance().tintColor = kAppThemeColor                
+        UINavigationBar.appearance().tintColor = kAppThemeColor
+        
+        UINavigationBar.appearance().barStyle = .blackOpaque
         
         //Notification using One Signal
         let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
@@ -115,9 +117,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         webViewController.receivedURL = url
         //self.window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController(rootViewController: webViewController)
-        navigationController.navigationBar.isHidden = isNavigationBarDisabled
-        window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        DispatchQueue.main.async { [weak self] in
+            navigationController.navigationBar.isHidden = isNavigationBarDisabled
+            self?.window?.rootViewController = navigationController
+        }
     }
     
     // Add this new method

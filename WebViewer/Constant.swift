@@ -20,6 +20,9 @@ let isNavigationBarDisabled: Bool = false
 //Loading spinner show/hide
 let isSpinnerDisabled: Bool = false
 
+//Zoom web view show/hide
+let isWebViewZoomDisabled = false
+
 //Web Url for webvie loading
 //Default if no url available
 let kWebUrl: String = "https://google.com"

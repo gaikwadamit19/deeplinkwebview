@@ -2,18 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSContactsUsageDescription</key>
-	<string>We need your permission to access your contacts</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>We need your permission to access your photo gallery</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>We need your permission to access your microphone for communication</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>We need your permission to access your calendar for synching up</string>
-	<key>NSCameraUsageDescription</key>
-	<string>We need your permission to access your camera</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your permission to access your current location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -48,6 +36,18 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>We need your permission to access your calendar for synching up</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We need your permission to access your camera</string>
+	<key>NSContactsUsageDescription</key>
+	<string>We need your permission to access your contacts</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your permission to access your current location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need your permission to access your microphone for communication</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need your permission to access your photo gallery</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>
@@ -56,6 +56,12 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
