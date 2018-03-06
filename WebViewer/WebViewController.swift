@@ -19,7 +19,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var connectionStatusLabel: UILabel?
     @IBOutlet weak var connectionStatusLabelHeightConstraint: NSLayoutConstraint?
     
-    let connectingMsg = "Connecting To Internet..."
+    let connectingMsg = "Connecting..."
     let connectedMsg = "Connected"
     
     let connectionStatusLabelDefaultHeight: CGFloat = 45.0
