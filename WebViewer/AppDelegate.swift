@@ -217,7 +217,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         let webViewCtrl = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController
-        webViewCtrl?.reloadWevView()
+        webViewCtrl?.refreshWevView()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

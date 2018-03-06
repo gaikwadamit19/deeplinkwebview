@@ -19,7 +19,7 @@ class WebViewController: UIViewController {
     @IBOutlet weak var connectionStatusLabel: UILabel?
     @IBOutlet weak var connectionStatusLabelHeightConstraint: NSLayoutConstraint?
     
-    let connectingMsg = "Connecting..."
+    let connectingMsg = "Connecting To Internet..."
     let connectedMsg = "Connected"
     
     let connectionStatusLabelDefaultHeight: CGFloat = 45.0
@@ -29,7 +29,8 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Spinned show/hide
         self.activityIndocator?.isHidden = isSpinnerDisabled
         
         webView = WKWebView(frame: (webViewParentView?.frame)!)
@@ -37,25 +38,34 @@ class WebViewController: UIViewController {
         webView?.uiDelegate = self
         webView?.scrollView.bounces = false
         webView?.scrollView.delegate = self
+        webViewParentView?.addSubview(webView!)
+        
+        //Add Constraints
+        addConstraintForWebView()
+
+        //Zoom enable/disable
         webView?.isMultipleTouchEnabled = !isWebViewZoomDisabled
         
         print("\(String(describing: receivedURL))")
         
-            if let url = receivedURL ?? URL(string: kWebUrl) {
-                self.activityIndocator?.startAnimating()
-                DispatchQueue.main.async { [weak self] in
-                    self?.connectionStatusLabel?.text = self?.connectingMsg
-                    self?.connectionStatusLabelHeightConstraint?.constant = (self?.connectionStatusLabelDefaultHeight)!
-                    self?.webView?.load(NSURLRequest(url: url as URL) as URLRequest)
-                }
-            }
+//        if Network.reachability?.status != .unreachable && Network.reachability?.isReachable == true {
+            //Load data
+            loadWebView()
+//        } else {
+//            self.activityIndocator?.isHidden = true
+//            let alertController = UIAlertController(title: "Alert",
+//                                                    message: "We are facing some issue while connecting, \nPlease check you internet connection and try again.",
+//                                                    preferredStyle: .alert)
+//            let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+//            alertController.addAction(defaultAction)
+//            self.present(alertController, animated: true, completion: nil)
+//        }
         
-        //webView?.frame = (self.webViewParentView?.frame)!
-        webViewParentView?.addSubview(webView!)
-        addConstraintForWebView()
-        
+        //Internet Rechability
         NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
-//        updateUserInterface()
+        DispatchQueue.main.async { [weak self] in
+            self?.updateUserInterface()
+        }
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -71,7 +81,7 @@ class WebViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func reloadWevView() {
+    @IBAction func refreshWevView() {
         DispatchQueue.main.async { [weak self] in
             self?.webView?.reload()
         }
@@ -95,6 +105,18 @@ class WebViewController: UIViewController {
         }
         urlComponents!.queryItems!.append(contentsOf: newParams);
         return urlComponents?.url;
+    }
+    
+    func loadWebView() {
+        if let url = receivedURL ?? URL(string: kWebUrl) {
+            self.activityIndocator?.isHidden = false
+            self.activityIndocator?.startAnimating()
+            DispatchQueue.main.async { [weak self] in
+                self?.connectionStatusLabel?.text = self?.connectingMsg
+                self?.connectionStatusLabelHeightConstraint?.constant = (self?.connectionStatusLabelDefaultHeight)!
+                self?.webView?.load(NSURLRequest(url: url as URL) as URLRequest)
+            }
+        }
     }
 }
 
@@ -137,53 +159,6 @@ extension WebViewController: WKNavigationDelegate {
         self.activityIndocator?.isHidden = true
     }
 }
-
-//extension WebViewController: UIWebViewDelegate {
-//    func webViewDidFinishLoad(_ webView: UIWebView) {
-//        print("pdf loaded successfully")
-//        self.activityIndocator?.stopAnimating()
-//        self.activityIndocator?.isHidden = true
-//        self.connectionStatusLabelHeightConstraint?.constant = connectionStatusLabelNoHeight
-//    }
-//
-//    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-//        self.activityIndocator?.stopAnimating()
-//        self.activityIndocator?.isHidden = true
-//        self.connectionStatusLabelHeightConstraint?.constant = connectionStatusLabelNoHeight
-
-//        let alertController = UIAlertController(title: "Error", message:
-//            "Unable to load data.\nPlease try again later.", preferredStyle: UIAlertControllerStyle.alert)
-//        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//        DispatchQueue.main.async { [weak self] in
-//            self?.present(alertController, animated: true, completion: nil)
-//        }
-//    }
-    
-//    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-//        let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
-//        if let url = request.url {
-//            if url.absoluteString.range(of: "?app=1") != nil {
-//                // everything is fine.
-//                return true
-//            }
-//            else {
-//                
-//                if let request = request as? NSMutableURLRequest {
-//                    webView.stopLoading()
-//                    request.addValue(status.subscriptionStatus.pushToken, forHTTPHeaderField: "osId")
-//                    webView.loadRequest(request as URLRequest)
-//                }
-//                return false
-//            }
-//        }
-//
-//        return true
-//    }
-//    
-//    func webViewDidStartLoad(_ webView: UIWebView) {
-//        
-//    }
-//}
 
 //Rechabiliy
 extension WebViewController {

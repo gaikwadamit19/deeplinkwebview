@@ -57,7 +57,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="3Wr-j8-zJ5"/>
+                    <navigationItem key="navigationItem" title="Details" id="3Wr-j8-zJ5">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="1QB-f9-q1H">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refreshWevView" destination="BYZ-38-t0r" id="MSr-0I-rcF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndocator" destination="aNo-FC-Chw" id="OFM-Yq-TCd"/>
                         <outlet property="connectionStatusLabel" destination="wBo-Fd-eJV" id="SPT-Hx-Siw"/>
