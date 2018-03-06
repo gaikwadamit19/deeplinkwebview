@@ -18,21 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="EmE-l7-FQE">
-                                <rect key="frame" x="0.0" y="64" width="320" height="363"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83p-DG-mWU">
+                                <rect key="frame" x="0.0" y="64" width="320" height="369"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="363" id="yaN-rI-9ED"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="369" id="O0K-Mn-qM0"/>
                                 </constraints>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0nf-Nd-9js"/>
-                                </connections>
-                            </webView>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-Fd-eJV">
                                 <rect key="frame" x="0.0" y="435" width="320" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="XbR-hn-85g"/>
+                                    <constraint firstAttribute="height" constant="45" id="KuK-b5-08U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.13725490200000001" green="0.69411764710000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -41,23 +37,23 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-FC-Chw">
                                 <rect key="frame" x="142" y="262" width="37" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="acq-nh-r6K"/>
-                                    <constraint firstAttribute="width" constant="37" id="esm-7d-YoN"/>
+                                    <constraint firstAttribute="height" constant="20" id="86W-MW-od4"/>
+                                    <constraint firstAttribute="width" constant="37" id="OkX-5f-G3v"/>
                                 </constraints>
                                 <color key="color" red="0.13725490200000001" green="0.69411764710000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EmE-l7-FQE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Do5-jF-wyt"/>
-                            <constraint firstItem="EmE-l7-FQE" firstAttribute="leading" secondItem="wBo-Fd-eJV" secondAttribute="leading" id="Gd7-wb-OKG"/>
-                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="top" secondItem="EmE-l7-FQE" secondAttribute="bottom" constant="8" symbolic="YES" id="H6E-dR-bIN"/>
-                            <constraint firstItem="EmE-l7-FQE" firstAttribute="trailing" secondItem="wBo-Fd-eJV" secondAttribute="trailing" id="Mpz-w6-Wjh"/>
-                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bKa-Pk-3hQ"/>
-                            <constraint firstAttribute="trailing" secondItem="EmE-l7-FQE" secondAttribute="trailing" id="cdr-nQ-Sac"/>
-                            <constraint firstItem="EmE-l7-FQE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mQ7-yk-eXH"/>
-                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="oTW-jy-SLZ"/>
-                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yXZ-hd-uUj"/>
+                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1PA-c2-Fpn"/>
+                            <constraint firstItem="83p-DG-mWU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5zo-gF-pwI"/>
+                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="69y-a3-KaU"/>
+                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="top" secondItem="83p-DG-mWU" secondAttribute="bottom" constant="2" id="aAe-ye-Gri"/>
+                            <constraint firstItem="83p-DG-mWU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dfO-bw-BhX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="83p-DG-mWU" secondAttribute="trailing" id="dmg-lq-2TY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wBo-Fd-eJV" secondAttribute="trailing" id="dqU-Zb-kYL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wBo-Fd-eJV" secondAttribute="bottom" id="gBP-6p-8YN"/>
+                            <constraint firstItem="aNo-FC-Chw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yR5-rS-m3Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -65,13 +61,13 @@
                     <connections>
                         <outlet property="activityIndocator" destination="aNo-FC-Chw" id="OFM-Yq-TCd"/>
                         <outlet property="connectionStatusLabel" destination="wBo-Fd-eJV" id="SPT-Hx-Siw"/>
-                        <outlet property="connectionStatusLabelHeightConstraint" destination="XbR-hn-85g" id="oQ6-mX-yRU"/>
-                        <outlet property="webView" destination="EmE-l7-FQE" id="aKL-sQ-XTd"/>
+                        <outlet property="connectionStatusLabelHeightConstraint" destination="KuK-b5-08U" id="kxb-r1-mQ8"/>
+                        <outlet property="webViewParentView" destination="83p-DG-mWU" id="tlO-zU-2df"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="474.375" y="132.5"/>
+            <point key="canvasLocation" x="437" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sby-FK-CTw">

@@ -27,6 +27,9 @@ let isWebViewZoomDisabled = false
 //Default if no url available
 let kWebUrl: String = "https://google.com"
 
+//Token Sending Url
+let kTokenUrl: String = "https://accounts.google.com/ServiceLogin"
+
 //TODO: Please update app id associated with your official account
 let kOneSignalAppId: String = "071b21be-c7ef-48ce-b499-62f323e5702a"    //Temp Id, need to change
 
