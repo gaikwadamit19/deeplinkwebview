@@ -42,7 +42,13 @@
 	<string>We need your permission to access your camera</string>
 	<key>NSContactsUsageDescription</key>
 	<string>We need your permission to access your contacts</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We need your permission to access your current location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We need your permission to access your current location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need your permission to access your current location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>We need your permission to access your current location</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>We need your permission to access your microphone for communication</string>

@@ -244,7 +244,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         }
         return false
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        //print("\(deviceToken.hexString())")
+        let webViewCtrl = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController
+        webViewCtrl?.loadWebView()
+    }
 }
+
+//extension Data {
+//    func hexString() -> String {
+//        return self.reduce("") { string, byte in
+//            string + String(format: "%02X", byte)
+//        }
+//    }
+//}
 
 extension UIAlertAction {
     static func okAction() -> UIAlertAction {

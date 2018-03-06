@@ -21,14 +21,16 @@ let isNavigationBarDisabled: Bool = false
 let isSpinnerDisabled: Bool = false
 
 //Zoom web view show/hide
-let isWebViewZoomDisabled = false
+let isWebViewZoomDisabled = true
 
 //Web Url for webvie loading
 //Default if no url available
-let kWebUrl: String = "https://google.com"
+let kWebUrl: String = "https://cobubble.com/version-test/webtest"
+//let kWebUrl: String = "http://findmylocation.org"
+//let kWebUrl: String = "https://bulma.io"
 
 //Token Sending Url
-let kTokenUrl: String = "https://accounts.google.com/ServiceLogin"
+let kTokenUrl: String = "https://cobubble.com/version-test/webtest"
 
 //TODO: Please update app id associated with your official account
 let kOneSignalAppId: String = "071b21be-c7ef-48ce-b499-62f323e5702a"    //Temp Id, need to change

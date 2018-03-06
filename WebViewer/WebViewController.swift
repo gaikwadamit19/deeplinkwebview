@@ -37,20 +37,27 @@ class WebViewController: UIViewController {
         webView?.navigationDelegate = self
         webView?.uiDelegate = self
         webView?.scrollView.bounces = false
-        webView?.scrollView.delegate = self
+        if isWebViewZoomDisabled == true {
+            webView?.scrollView.delegate = self
+        }
+        //Zoom enable/disable
+        webView?.isMultipleTouchEnabled = !isWebViewZoomDisabled
+
         webViewParentView?.addSubview(webView!)
         
         //Add Constraints
         addConstraintForWebView()
-
-        //Zoom enable/disable
-        webView?.isMultipleTouchEnabled = !isWebViewZoomDisabled
         
         print("\(String(describing: receivedURL))")
         
+        loadWebView()
+        
 //        if Network.reachability?.status != .unreachable && Network.reachability?.isReachable == true {
             //Load data
-            loadWebView()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
+//            // your code here
+//            self?.loadWebView()
+//        }
 //        } else {
 //            self.activityIndocator?.isHidden = true
 //            let alertController = UIAlertController(title: "Alert",
@@ -124,6 +131,10 @@ extension WebViewController: UIScrollViewDelegate, WKUIDelegate {
     // Disable zooming in webView
     func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
         scrollView.pinchGestureRecognizer?.isEnabled = !isWebViewZoomDisabled
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+            return nil
     }
 }
 
