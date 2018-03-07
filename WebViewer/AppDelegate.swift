@@ -24,13 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         UINavigationBar.appearance().barStyle = .blackOpaque
         
         //Notification using One Signal
-        let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { notification in
+        let notificationReceivedBlock: OSHandleNotificationReceivedBlock = { [weak self] notification in
             print("Received Notification: \(notification!.payload.notificationID)")
             print("launchURL = \(notification?.payload.launchURL ?? "None")")
             print("content_available = \(notification?.payload.contentAvailable ?? false)")
         }
         
-        let notificationOpenedBlock: OSHandleNotificationActionBlock = { result in
+        let notificationOpenedBlock: OSHandleNotificationActionBlock = { [weak self] result in
             // This block gets called when the user reacts to a notification received
             let payload: OSNotificationPayload? = result?.notification.payload
             
@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
                 }
                 print("additionalData = \(String(describing: additionalDataUrl))")
                 print("urlStr = \(String(describing: bodyUrl))")
-                self.makeDeepLinkToWebView(url: bodyUrl ??  additionalDataUrl ?? URL(string: kWebUrl)!)
+                self?.makeDeepLinkToWebView(url: bodyUrl ??  additionalDataUrl ?? URL(string: kWebUrl)!)
                 
                 if let actionSelected = payload?.actionButtons {
                     print("actionSelected = \(actionSelected)")
@@ -106,20 +106,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
             print(error)
         }
         
+        //application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert , .badge , .sound], categories: nil))
+        
         return true
     }
     
     func makeDeepLinkToWebView(url: URL) {
         // DEEP LINK and open url in RedViewController
-        // Send notification with Additional Data > example key: "OpenURL" example value: "https://google.com"
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let webViewController : WebViewController = mainStoryboard.instantiateViewController(withIdentifier: "WebViewControllerID") as! WebViewController       
-        webViewController.receivedURL = url
-        //self.window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController(rootViewController: webViewController)
-        DispatchQueue.main.async { [weak self] in
-            navigationController.navigationBar.isHidden = isNavigationBarDisabled
-            self?.window?.rootViewController = navigationController
+        if let webViewCtrl = (self.window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController {
+            DispatchQueue.main.async { [weak self] in
+                webViewCtrl.receivedURL = url
+                webViewCtrl.loadWebView()
+                self?.window?.rootViewController?.navigationController?.navigationBar.isHidden = isNavigationBarDisabled
+            }
+        } else {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let webViewController : WebViewController = mainStoryboard.instantiateViewController(withIdentifier: "WebViewControllerID") as! WebViewController
+            webViewController.receivedURL = url
+            let navigationController = UINavigationController(rootViewController: webViewController)
+            DispatchQueue.main.async { [weak self] in
+                navigationController.navigationBar.isHidden = isNavigationBarDisabled
+                self?.window?.rootViewController = navigationController
+            }
         }
     }
     
@@ -218,6 +226,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         let webViewCtrl = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController
         webViewCtrl?.refreshWevView()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [weak self] in
+//            self?.scheduleLocal()
+//        }
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -265,4 +276,22 @@ extension UIAlertAction {
         return UIAlertAction(title: NSLocalizedString("OK", comment: "Alert OK button"), style: .cancel, handler: nil);
     }
 }
+
+//extension AppDelegate {
+//    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+//        let bodyUrl: URL? = notification.alertBody?.getUrl()
+//        print("bodyUrl = \(String(describing: bodyUrl))")
+//        print("urlStr = \(String(describing: bodyUrl))")
+//        makeDeepLinkToWebView(url: bodyUrl!)
+//    }
+//
+//    func scheduleLocal() {
+//        let notification = UILocalNotification()
+//        notification.fireDate = Date()
+//        notification.alertTitle = "Test"
+//        notification.alertBody = "http://google.com"
+//        notification.soundName = UILocalNotificationDefaultSoundName
+//        UIApplication.shared.scheduleLocalNotification(notification)
+//    }
+//}
 

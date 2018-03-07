@@ -28,6 +28,7 @@ let isWebViewZoomDisabled = true
 let kWebUrl: String = "https://cobubble.com/version-test/webtest"
 //let kWebUrl: String = "http://findmylocation.org"
 //let kWebUrl: String = "https://bulma.io"
+//let kWebUrl: String = "https://google.com"
 
 //Token Sending Url
 let kTokenUrl: String = "https://cobubble.com/version-test/webtest"
