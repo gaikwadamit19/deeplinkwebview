@@ -19,21 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83p-DG-mWU">
-                                <rect key="frame" x="0.0" y="64" width="320" height="369"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="369" id="O0K-Mn-qM0"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBo-Fd-eJV">
-                                <rect key="frame" x="0.0" y="435" width="320" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="KuK-b5-08U"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.13725490200000001" green="0.69411764710000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-FC-Chw">
                                 <rect key="frame" x="142" y="262" width="37" height="20"/>
                                 <constraints>
@@ -45,14 +36,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1PA-c2-Fpn"/>
                             <constraint firstItem="83p-DG-mWU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5zo-gF-pwI"/>
                             <constraint firstItem="aNo-FC-Chw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="69y-a3-KaU"/>
-                            <constraint firstItem="wBo-Fd-eJV" firstAttribute="top" secondItem="83p-DG-mWU" secondAttribute="bottom" constant="2" id="aAe-ye-Gri"/>
                             <constraint firstItem="83p-DG-mWU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dfO-bw-BhX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="83p-DG-mWU" secondAttribute="trailing" id="dmg-lq-2TY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wBo-Fd-eJV" secondAttribute="trailing" id="dqU-Zb-kYL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wBo-Fd-eJV" secondAttribute="bottom" id="gBP-6p-8YN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="83p-DG-mWU" secondAttribute="bottom" id="fv8-jo-JPP"/>
                             <constraint firstItem="aNo-FC-Chw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yR5-rS-m3Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -67,14 +55,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndocator" destination="aNo-FC-Chw" id="OFM-Yq-TCd"/>
-                        <outlet property="connectionStatusLabel" destination="wBo-Fd-eJV" id="SPT-Hx-Siw"/>
-                        <outlet property="connectionStatusLabelHeightConstraint" destination="KuK-b5-08U" id="kxb-r1-mQ8"/>
                         <outlet property="webViewParentView" destination="83p-DG-mWU" id="tlO-zU-2df"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437" y="134"/>
+            <point key="canvasLocation" x="436.875" y="133.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sby-FK-CTw">

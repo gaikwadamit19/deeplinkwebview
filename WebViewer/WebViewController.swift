@@ -120,7 +120,7 @@ class WebViewController: UIViewController {
             self.activityIndocator?.startAnimating()
             DispatchQueue.main.async { [weak self] in
                 self?.connectionStatusLabel?.text = self?.connectingMsg
-                self?.connectionStatusLabelHeightConstraint?.constant = (self?.connectionStatusLabelDefaultHeight)!
+                self?.connectionStatusLabelHeightConstraint?.constant = self?.connectionStatusLabelDefaultHeight ?? 0
                 self?.webView?.load(NSURLRequest(url: url as URL) as URLRequest)
             }
         }
@@ -196,7 +196,7 @@ extension WebViewController {
                     self?.connectionStatusLabelHeightConstraint?.constant -= 5
                     }, completion: { [weak self] value in
                         DispatchQueue.main.async { [weak self] in
-                            self?.connectionStatusLabelHeightConstraint?.constant = (self?.connectionStatusLabelNoHeight)!
+                            self?.connectionStatusLabelHeightConstraint?.constant = self?.connectionStatusLabelNoHeight ?? 0
                             self?.connectionStatusLabel?.text = self?.connectedMsg
                         }
                 })
