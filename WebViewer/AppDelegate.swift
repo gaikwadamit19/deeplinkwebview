@@ -178,8 +178,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     
     func onRegisterForPushNotificationsButton() {
         let status: OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
-        let hasPrompted = status.permissionStatus.hasPrompted
-        if hasPrompted == false {
+        if status.permissionStatus.status != .denied {
             // Call when you want to prompt the user to accept push notifications.
             // Only call once and only if you set kOSSettingsKeyAutoPrompt in AppDelegate to false.
             OneSignal.promptForPushNotifications(userResponse: { accepted in
@@ -195,21 +194,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     }
     
     func displaySettingsNotification() {
-        let message = NSLocalizedString("Alert", comment: "Please enable your notification setting  by going to Settings > Notifications > Allow Notifications. You will not received any notification until and unless you turn it on.")
         let settingsAction = UIAlertAction(title: NSLocalizedString("Settings", comment: "Alert button to open Settings"), style: .`default`, handler: { action in
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
-            } else {
-                // Fallback on earlier versions
-            }
+            UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
         });
-        self.displayAlert(title: message, message: "OneSignal Example", actions: [UIAlertAction.okAction(), settingsAction]);
+        self.displayAlert(title: "Alert", message: "Please enable your notification setting  by going to Settings > Notifications > Allow Notifications. You will not received any notification until and unless you turn it on.", actions: [UIAlertAction.okAction(), settingsAction]);
     }
     
     func displayAlert(title : String, message: String, actions: [UIAlertAction]) {
         let controller = UIAlertController(title: title, message: message, preferredStyle: .alert);
         actions.forEach { controller.addAction($0) };
-        self.window?.rootViewController?.present(controller, animated: true, completion: nil);
+        DispatchQueue.main.async { [weak self] in
+            self?.window?.rootViewController?.present(controller, animated: true, completion: nil);
+        }
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -234,7 +230,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         // handle any deeplink
-        //Deeplinker.checkDeepLink()
+        DispatchQueue.main.async {
+            Deeplinker.checkDeepLink()
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
