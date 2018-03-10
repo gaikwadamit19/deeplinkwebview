@@ -114,7 +114,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     func makeDeepLinkToWebView(url: URL) {
         // DEEP LINK and open url in RedViewController
         if let webViewCtrl = (self.window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController {
-            DispatchQueue.main.async { [weak self] in
+            DispatchQueue.main.async { [weak self] in                
+                /// The presenting view controllers view doesn't get removed from the window as its currently transistioning and presenting a view controller
+                if let transitionViewClass = NSClassFromString("UITransitionView") {
+                    for subview in (UIApplication.shared.keyWindow?.subviews ?? []) where subview.isKind(of: transitionViewClass) {
+                        subview.removeFromSuperview()
+                    }
+                }
+                
                 webViewCtrl.receivedURL = url
                 webViewCtrl.loadWebView()
                 self?.window?.rootViewController?.navigationController?.navigationBar.isHidden = isNavigationBarDisabled

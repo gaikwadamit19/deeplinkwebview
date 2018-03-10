@@ -72,7 +72,7 @@ class WebViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(statusManager), name: .flagsChanged, object: Network.reachability)
         DispatchQueue.main.async { [weak self] in
             self?.updateUserInterface()
-        }
+        }        
     }
     
     override var prefersStatusBarHidden: Bool {
