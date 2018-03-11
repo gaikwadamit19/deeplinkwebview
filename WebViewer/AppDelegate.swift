@@ -33,20 +33,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         let notificationOpenedBlock: OSHandleNotificationActionBlock = { [weak self] result in
             // This block gets called when the user reacts to a notification received
             let payload: OSNotificationPayload? = result?.notification.payload
-            
-            print("Message = \(payload!.body)")
-            print("badge number = \(payload?.badge ?? 0)")
-            print("notification sound = \(payload?.sound ?? "None")")
             let bodyUrl: URL? = payload?.body.getUrl()
             let additionalData: Dictionary? = result?.notification.payload?.additionalData
-            if bodyUrl != nil || additionalData != nil {
-                var additionalDataUrl: URL? = nil
-                if additionalData != nil {
-                    additionalDataUrl = URL(string: (result?.notification.payload?.additionalData["OpenURL"] as? String) ?? "")
+            let launchUrlStr: String? = result?.notification.payload.launchURL
+            print("payload = \(String(describing: payload))")
+            print("additionalData = \(String(describing: additionalData))")
+            print("launchUrlStr = \(String(describing: launchUrlStr))")
+            if  launchUrlStr != nil || additionalData != nil || bodyUrl != nil {
+                var launchUrl: URL? = nil
+                if launchUrl != nil {   //Launch Url
+                    launchUrl = URL(string: launchUrlStr ?? "")
+                } else if additionalData != nil {   //Additional Data Url
+                    launchUrl = URL(string: (result?.notification.payload?.additionalData["OpenURL"] as? String) ?? "")
+                } else if bodyUrl != nil {
+                     launchUrl = bodyUrl
+                } else {
+                    launchUrl = URL(string: kWebUrl)
                 }
-                print("additionalData = \(String(describing: additionalDataUrl))")
+                
+                print("additionalData = \(String(describing: launchUrl))")
                 print("urlStr = \(String(describing: bodyUrl))")
-                self?.makeDeepLinkToWebView(url: bodyUrl ??  additionalDataUrl ?? URL(string: kWebUrl)!)
+                self?.makeDeepLinkToWebView(url: launchUrl!)
                 
                 if let actionSelected = payload?.actionButtons {
                     print("actionSelected = \(actionSelected)")
@@ -82,8 +89,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false, kOSSettingsKeyInAppLaunchURL: true, ]
         
         OneSignal.initWithLaunchOptions(launchOptions, appId: kOneSignalAppId, handleNotificationReceived: notificationReceivedBlock, handleNotificationAction: notificationOpenedBlock, settings: onesignalInitSettings)
-        
         OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification
+        
         
         // Add your AppDelegate as an obsserver
         OneSignal.add(self as OSPermissionObserver)
@@ -113,15 +120,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     
     func makeDeepLinkToWebView(url: URL) {
         // DEEP LINK and open url in RedViewController
+        print("In AppDelegate.makeDeepLinkToWebView")
         if let webViewCtrl = (self.window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController {
-            DispatchQueue.main.async { [weak self] in                
+            DispatchQueue.main.async { [weak self] in
                 /// The presenting view controllers view doesn't get removed from the window as its currently transistioning and presenting a view controller
                 if let transitionViewClass = NSClassFromString("UITransitionView") {
                     for subview in (UIApplication.shared.keyWindow?.subviews ?? []) where subview.isKind(of: transitionViewClass) {
                         subview.removeFromSuperview()
+                        print("UITransitionView Removed")
                     }
+                } else {
+                    print("No UITransitionView Found")
                 }
-                
                 webViewCtrl.receivedURL = url
                 webViewCtrl.loadWebView()
                 self?.window?.rootViewController?.navigationController?.navigationBar.isHidden = isNavigationBarDisabled
@@ -263,6 +273,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         //print("\(deviceToken.hexString())")
+        print("In didRegisterForRemoteNotificationsWithDeviceToken call to loadWebView")
         let webViewCtrl = (window?.rootViewController as? UINavigationController)?.viewControllers.first as? WebViewController
         webViewCtrl?.loadWebView()
     }

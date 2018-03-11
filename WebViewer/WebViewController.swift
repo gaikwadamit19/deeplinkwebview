@@ -119,6 +119,7 @@ class WebViewController: UIViewController {
             self.activityIndocator?.isHidden = false
             self.activityIndocator?.startAnimating()
             DispatchQueue.main.async { [weak self] in
+                print("loadWebView")
                 self?.connectionStatusLabel?.text = self?.connectingMsg
                 self?.connectionStatusLabelHeightConstraint?.constant = self?.connectionStatusLabelDefaultHeight ?? 0
                 self?.webView?.load(NSURLRequest(url: url as URL) as URLRequest)
