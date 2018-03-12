@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
             print("launchUrlStr = \(String(describing: launchUrlStr))")
             if  launchUrlStr != nil || additionalData != nil || bodyUrl != nil {
                 var launchUrl: URL? = nil
-                if launchUrl != nil {   //Launch Url
+                if launchUrlStr != nil {   //Launch Url
                     launchUrl = URL(string: launchUrlStr ?? "")
                 } else if additionalData != nil {   //Additional Data Url
                     launchUrl = URL(string: (result?.notification.payload?.additionalData["OpenURL"] as? String) ?? "")
