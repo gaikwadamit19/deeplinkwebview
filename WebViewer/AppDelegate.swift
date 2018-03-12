@@ -47,7 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, OSPermissionObserver, OSS
                     launchUrl = URL(string: (result?.notification.payload?.additionalData["OpenURL"] as? String) ?? "")
                 } else if bodyUrl != nil {
                      launchUrl = bodyUrl
-                } else {
+                }
+                
+                if launchUrl == nil {
                     launchUrl = URL(string: kWebUrl)
                 }
                 
